@@ -11,3 +11,13 @@ const returnsArrayFn = () => {
 const [letters, numbers] = returnsArrayFn();
 
 console.log(letters, numbers)
+
+// Tarea
+
+const useState = (value: string) => {
+    return [value, (v: string) => console.log(v)] as const
+}
+
+const [name, setName] = useState('Goku');
+console.log(name);       // Goku
+setName('Vegeta');       // Imprime "Vegeta"
