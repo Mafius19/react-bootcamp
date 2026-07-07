@@ -7,7 +7,8 @@ import './style.css';
 // import './bases/06-obj-destructuring'
 // import './bases/07-array-destructuring'
 // import './bases/08-imp-exp'
-import './bases/09-promises'
+// import './bases/09-promises'
+import './bases/10-fetch-api'
 
 // import { Owner } from './data/heroes.data';
 // import { getHeroesByOwner } from './bases/08-imp-exp';
