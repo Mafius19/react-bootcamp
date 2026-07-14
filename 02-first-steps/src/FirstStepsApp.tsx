@@ -7,7 +7,7 @@ interface ItemInCart {
 
 const ItemsInCart : ItemInCart[] = [
   {productName: 'Nintendo Switch 2', quantity: 1},
-  {productName: 'Pro Controlloer', quantity: 2},
+  {productName: 'Pro Controller', quantity: 2},
   {productName: 'Super Smash', quantity: 5},
 ]
 export function FirstStepsApp() {
