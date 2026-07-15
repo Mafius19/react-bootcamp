@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { mockGifs } from './mock-data/gifs.mock'
 import { CustomHeader } from './shared/components/CustomHeader'
 import { SearchBar } from './shared/components/SearchBar'
-import { PreviousSearches } from './gifs/PreviousSearches'
-import { GifList } from './gifs/GifList'
+import { PreviousSearches } from './gifs/components/PreviousSearches'
+import { GifList } from './gifs/components/GifList'
 
 export const GifsApp = () => {
 
