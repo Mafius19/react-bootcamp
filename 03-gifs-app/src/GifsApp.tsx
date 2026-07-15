@@ -5,11 +5,12 @@ import { SearchBar } from './shared/components/SearchBar'
 import { PreviousSearches } from './gifs/components/PreviousSearches'
 import { GifList } from './gifs/components/GifList'
 import { getGifsByQuery } from './gifs/actions/get-gifs-by-query.actions'
+import type { Gif } from './gifs/interfaces/gif.interface'
 
 export const GifsApp = () => {
 
-  const [previousTerm, setPreviousTerm] = useState(['dragon ball z'])
-
+  const [previousTerm, setPreviousTerm] = useState<string[]>([])
+  const [gifs, setGifs] = useState<Gif[]>([])
   const handleTermClicked = (term: string) => {
     console.log({ term })
   }
@@ -23,7 +24,7 @@ export const GifsApp = () => {
       setPreviousTerm([queryValidated, ...previousTerm].slice(0, 8));
 
     const gifs = await getGifsByQuery(queryValidated);
-    console.log({gifs})
+    setGifs(gifs);
   }
   return (
     <>
@@ -37,7 +38,7 @@ export const GifsApp = () => {
       <PreviousSearches searches={previousTerm} onLabelClicked={handleTermClicked} />
 
       {/* Gifs */}
-      <GifList gifs={mockGifs} />
+      <GifList gifs={gifs} />
     </>
   )
 }
