@@ -10,11 +10,17 @@ export const GifsApp = () => {
   const [previousTerm, setPreviousTerm] = useState(['dragon ball z'])
 
   const handleTermClicked = (term: string) => {
-    console.log({term})
+    console.log({ term })
   }
 
-  const handleSearch = (query: string) => {
-    console.log({query})
+  const handleSearch = (query: string = '') => {
+    if (query === '') return;
+    const queryValidated = query.trim().toLowerCase();
+    previousTerm.includes(queryValidated) ?
+      null
+      :
+      setPreviousTerm([queryValidated, ...previousTerm].slice(0, 8));
+
   }
   return (
     <>
@@ -25,7 +31,7 @@ export const GifsApp = () => {
       <SearchBar placeholder="Busca lo que quieras" onQuery={handleSearch} />
 
       {/* Busquedas previas */}
-      <PreviousSearches searches={previousTerm} onLabelClicked={handleTermClicked}/>
+      <PreviousSearches searches={previousTerm} onLabelClicked={handleTermClicked} />
 
       {/* Gifs */}
       <GifList gifs={mockGifs} />
