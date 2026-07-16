@@ -9,5 +9,4 @@ describe('GifsApp', () => {
 
     expect(container).toMatchSnapshot();
   });
-})
-
+});
