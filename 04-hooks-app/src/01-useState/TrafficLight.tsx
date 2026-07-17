@@ -4,13 +4,19 @@ const colors = {
   red: "bg-red-500 animate-pulse",
   yellow: "bg-yellow-500 animate-pulse",
   green: "bg-green-500 animate-pulse",
+  blue: "bg-blue-500 animate-pulse",
+
 }
+
+// type trafficLightColors = 'red' | 'yellow' | "green";
+type trafficLightColors = keyof tyoeod colors;
+
 export const TrafficLight = () => {
 
-  const [light, setLight] = useState('red')
+  const [light, setLight] = useState<trafficLightColors>('red')
 
-  const handleColorChange = (color: string) => {
-    setLight((prev) => {
+  const handleColorChange = (color: trafficLightColors) => {
+      setLight((prev) => {
       console.log({prev})
       return color
     })
