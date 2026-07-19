@@ -31,15 +31,25 @@ export const tasksReducer = (state: TaskState, action: TaskAction): TaskState =>
 
       return {
         ...state,
-        todos: [...state.todos, newTodo]
+        todos: [...state.todos, newTodo],
+        length: state.todos.length + 1,
+        pending: state.pending + 1,
       };
     }
 
-    case 'DELETE_TODO':
+    case 'DELETE_TODO': {
+      const currentTodos = state.todos.filter((todo) => todo.id !== action.payload)
+      // const completedTodos = currentTodos.filter(todo => todo.completed).length;
+      // const pendingTodos = currentTodos.length - completedTodos ;
+
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id !== action.payload)
+        todos: currentTodos,
+        length: currentTodos.length,
+        completed: currentTodos.filter(todo => todo.completed).length,
+        pending: currentTodos.filter(todo => !todo.completed).length,
       };
+    }
 
     case 'TOGGLE_TODO': {
       const updateTodos = state.todos.map(todo => {
@@ -51,7 +61,9 @@ export const tasksReducer = (state: TaskState, action: TaskAction): TaskState =>
 
       return {
         ...state,
-        todos: updateTodos
+        todos: updateTodos,
+        completed: updateTodos.filter(todo => todo.completed).length,
+        pending: updateTodos.filter(todo => !todo.completed).length,
       };
     }
 
