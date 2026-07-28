@@ -8,7 +8,6 @@ export const ProfessionalApp = () => {
       <div className='bg-gradient'>
         <RouterProvider router={appRouter}/>
       </div>
-
     </UserContextProvider>
   )
 }
