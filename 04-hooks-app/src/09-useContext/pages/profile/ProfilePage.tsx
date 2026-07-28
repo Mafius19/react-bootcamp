@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { useContext } from "react"
 
 export const ProfilePage = () => {
-  const {user} = useContext(UserContext);
+  const {user, logout} = useContext(UserContext);
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
@@ -12,7 +12,7 @@ export const ProfilePage = () => {
 
       <pre className="my-4 overflow-x-auto">{JSON.stringify(user, null, 2)}</pre>
 
-      <Button variant="destructive">Salir</Button>
+      <Button variant="destructive" onClick={logout}>Salir</Button>
     </div>
   )
 }
