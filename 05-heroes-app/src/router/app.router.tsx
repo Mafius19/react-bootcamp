@@ -7,7 +7,7 @@ import { lazy } from 'react'
 // import { SearchPage } from '@/heroes/pages/search/SearchPage'
 import { createBrowserRouter } from 'react-router'
 
-
+// Carga perezosa
 const SearchPage = lazy(() => import('@/heroes/pages/search/SearchPage'))
 
 export const appRouter = createBrowserRouter([
