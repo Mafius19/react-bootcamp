@@ -3,8 +3,6 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 
 interface Props {
   totalPages: number;
-  limit?: number;
-
 }
 export const CustomPagination = ({ totalPages }: Props) => {
   const page = 1 as number;
