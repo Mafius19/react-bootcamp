@@ -1,5 +1,5 @@
-import { QueryClient, QueryClientContext, QueryClientProvider } from '@tanstack/react-query';
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { describe, expect, test, vi } from 'vitest';
 import { HeroStats } from './HeroStats';
 import { render, screen } from '@testing-library/react';
 import { useHeroSummary } from '../hooks/useHeroSummary';
